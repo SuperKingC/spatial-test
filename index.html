@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>空间天赋性格测试</title>
+    <title>小狗10有多爱主人kk - 恋爱关系测试</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐶</text></svg>">
     <style>
         * {
             margin: 0;
@@ -14,8 +15,8 @@
         }
         
         body {
-            background-color: #f5f8ff;
-            color: #333;
+            background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+            color: #5a3d5c;
             line-height: 1.6;
             padding: 20px;
             min-height: 100vh;
@@ -47,30 +48,83 @@
         
         .logo i {
             font-size: 2.5rem;
-            color: #4361ee;
+            color: #ff6b9d;
         }
         
         h1 {
-            color: #2a2d7c;
+            color: #7e3c7d;
             font-size: 2.5rem;
             margin-bottom: 10px;
             font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
         }
         
         .subtitle {
-            color: #6c757d;
+            color: #9d5b9b;
             font-size: 1.2rem;
             max-width: 700px;
-            margin: 0 auto;
+            margin: 0 auto 20px;
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 10px 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .character-card {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+        
+        .character {
+            background-color: white;
+            padding: 15px;
+            border-radius: 15px;
+            text-align: center;
+            width: 180px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+        }
+        
+        .character:hover {
+            transform: translateY(-5px);
+        }
+        
+        .character-icon {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+        
+        .character-name {
+            font-weight: bold;
+            font-size: 1.4rem;
+            color: #7e3c7d;
+            margin-bottom: 5px;
+        }
+        
+        .character-desc {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .dog10 {
+            border-top: 5px solid #ff9e6d;
+        }
+        
+        .kk {
+            border-top: 5px solid #6d9eff;
         }
         
         .progress-container {
-            background-color: white;
+            background-color: rgba(255, 255, 255, 0.85);
             border-radius: 15px;
             padding: 25px;
-            box-shadow: 0 10px 30px rgba(67, 97, 238, 0.1);
+            box-shadow: 0 10px 30px rgba(126, 60, 125, 0.15);
             margin-bottom: 30px;
             transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
         }
         
         .progress-header {
@@ -82,22 +136,22 @@
         
         .progress-title {
             font-size: 1.4rem;
-            color: #2a2d7c;
+            color: #7e3c7d;
             font-weight: 600;
         }
         
         .progress-count {
             font-size: 1.2rem;
             font-weight: 700;
-            color: #4361ee;
-            background-color: #eef2ff;
+            color: #ff6b9d;
+            background-color: #ffe4ec;
             padding: 8px 15px;
             border-radius: 50px;
         }
         
         .progress-bar {
             height: 12px;
-            background-color: #e9ecef;
+            background-color: #f0d5ef;
             border-radius: 6px;
             overflow: hidden;
             margin-bottom: 15px;
@@ -105,23 +159,24 @@
         
         .progress-fill {
             height: 100%;
-            background: linear-gradient(90deg, #4361ee, #3a56d4);
+            background: linear-gradient(90deg, #ff9e6d, #ff6b9d);
             border-radius: 6px;
             width: 10%;
             transition: width 0.5s ease;
         }
         
         .question-container {
-            background-color: white;
+            background-color: rgba(255, 255, 255, 0.9);
             border-radius: 15px;
             padding: 30px;
-            box-shadow: 0 10px 30px rgba(67, 97, 238, 0.1);
+            box-shadow: 0 10px 30px rgba(126, 60, 125, 0.15);
             margin-bottom: 30px;
             transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
         }
         
         .question-number {
-            color: #4361ee;
+            color: #ff6b9d;
             font-weight: 600;
             font-size: 1.1rem;
             margin-bottom: 5px;
@@ -129,7 +184,7 @@
         
         .question-text {
             font-size: 1.5rem;
-            color: #2a2d7c;
+            color: #7e3c7d;
             margin-bottom: 30px;
             line-height: 1.4;
         }
@@ -146,35 +201,35 @@
             min-width: 150px;
             text-align: center;
             padding: 20px 15px;
-            background-color: #f8f9fa;
-            border: 2px solid #e9ecef;
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 2px solid #f0d5ef;
             border-radius: 12px;
             cursor: pointer;
             transition: all 0.2s ease;
         }
         
         .option:hover {
-            background-color: #eef2ff;
-            border-color: #c1ccff;
+            background-color: #ffe4ec;
+            border-color: #ffb8d0;
             transform: translateY(-3px);
         }
         
         .option.selected {
-            background-color: #eef2ff;
-            border-color: #4361ee;
-            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.15);
+            background-color: #ffe4ec;
+            border-color: #ff6b9d;
+            box-shadow: 0 5px 15px rgba(255, 107, 157, 0.15);
         }
         
         .option-value {
             font-size: 1.2rem;
             font-weight: 700;
-            color: #4361ee;
+            color: #ff6b9d;
             margin-bottom: 8px;
         }
         
         .option-label {
             font-size: 1rem;
-            color: #495057;
+            color: #7e3c7d;
         }
         
         .buttons-container {
@@ -197,22 +252,22 @@
         }
         
         .btn-prev {
-            background-color: #e9ecef;
-            color: #495057;
+            background-color: #f0d5ef;
+            color: #7e3c7d;
         }
         
         .btn-prev:hover:not(:disabled) {
-            background-color: #dee2e6;
+            background-color: #e6c4e4;
         }
         
         .btn-next {
-            background-color: #4361ee;
+            background: linear-gradient(90deg, #ff9e6d, #ff6b9d);
             color: white;
         }
         
         .btn-next:hover:not(:disabled) {
-            background-color: #3a56d4;
-            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
+            box-shadow: 0 5px 15px rgba(255, 107, 157, 0.3);
+            transform: translateY(-2px);
         }
         
         .btn:disabled {
@@ -222,51 +277,57 @@
         
         .result-container {
             display: none;
-            background-color: white;
+            background-color: rgba(255, 255, 255, 0.95);
             border-radius: 15px;
             padding: 40px;
-            box-shadow: 0 10px 30px rgba(67, 97, 238, 0.1);
+            box-shadow: 0 10px 30px rgba(126, 60, 125, 0.15);
             margin-bottom: 30px;
             text-align: center;
+            backdrop-filter: blur(5px);
         }
         
         .result-icon {
             font-size: 4rem;
-            color: #4361ee;
+            color: #ff6b9d;
             margin-bottom: 20px;
         }
         
         .result-title {
             font-size: 2.2rem;
-            color: #2a2d7c;
+            color: #7e3c7d;
             margin-bottom: 20px;
         }
         
         .result-score {
             font-size: 3.5rem;
             font-weight: 800;
-            color: #4361ee;
+            color: #ff6b9d;
             margin-bottom: 30px;
+            background: linear-gradient(90deg, #ff9e6d, #ff6b9d);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         
         .result-description {
             font-size: 1.2rem;
-            color: #495057;
+            color: #5a3d5c;
             max-width: 700px;
             margin: 0 auto 30px;
             line-height: 1.8;
         }
         
         .result-details {
-            background-color: #f8f9fa;
+            background-color: rgba(255, 228, 236, 0.5);
             border-radius: 12px;
             padding: 25px;
             text-align: left;
             margin-bottom: 30px;
+            border-left: 5px solid #ff6b9d;
         }
         
         .result-details h3 {
-            color: #2a2d7c;
+            color: #7e3c7d;
             margin-bottom: 15px;
             font-size: 1.4rem;
         }
@@ -283,32 +344,79 @@
         }
         
         .result-details li:before {
-            content: "✓";
+            content: "❤️";
             position: absolute;
             left: 0;
-            color: #4361ee;
-            font-weight: bold;
+            font-size: 1.2rem;
         }
         
         .btn-restart {
-            background-color: #4cc9f0;
+            background: linear-gradient(90deg, #6d9eff, #9d5b9b);
             color: white;
             margin: 0 auto;
         }
         
         .btn-restart:hover {
-            background-color: #3ab4d9;
-            box-shadow: 0 5px 15px rgba(76, 201, 240, 0.3);
+            box-shadow: 0 5px 15px rgba(109, 158, 255, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        .love-meter {
+            width: 80%;
+            height: 30px;
+            background-color: #f0d5ef;
+            border-radius: 15px;
+            margin: 30px auto;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .love-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #ff9e6d, #ff6b9d);
+            border-radius: 15px;
+            width: 0%;
+            transition: width 1.5s ease;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 10px;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .love-label {
+            position: absolute;
+            top: -35px;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            color: #7e3c7d;
         }
         
         footer {
             text-align: center;
-            color: #6c757d;
+            color: #7e3c7d;
             margin-top: 30px;
             padding-top: 20px;
-            border-top: 1px solid #e9ecef;
+            border-top: 1px solid rgba(126, 60, 125, 0.3);
             width: 100%;
             font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .heart-animation {
+            font-size: 1.5rem;
+            position: absolute;
+            animation: float 2s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
         }
         
         @media (max-width: 768px) {
@@ -337,6 +445,14 @@
                 justify-content: center;
                 width: 100%;
             }
+            
+            .character-card {
+                gap: 15px;
+            }
+            
+            .character {
+                width: 140px;
+            }
         }
         
         .loading {
@@ -355,7 +471,7 @@
         
         .loading-spinner {
             border: 5px solid #f3f3f3;
-            border-top: 5px solid #4361ee;
+            border-top: 5px solid #ff6b9d;
             border-radius: 50%;
             width: 60px;
             height: 60px;
@@ -367,32 +483,58 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+        
+        .love-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
     </style>
 </head>
 <body>
+    <div class="love-hearts" id="loveHearts"></div>
+    
     <div class="container">
         <header>
             <div class="logo">
-                <i class="fas fa-brain"></i>
-                <h1>空间天赋性格测试</h1>
+                <i class="fas fa-heart"></i>
+                <h1>小狗10有多爱主人kk</h1>
+                <i class="fas fa-paw"></i>
             </div>
-            <p class="subtitle">通过10个问题评估您的空间感知与想象能力，帮助您了解自己的空间天赋水平</p>
+            <p class="subtitle">通过10个问题测试小狗10对主人kk的爱意深度，了解他们之间的特殊羁绊！</p>
+            
+            <div class="character-card">
+                <div class="character dog10">
+                    <div class="character-icon">🐕</div>
+                    <div class="character-name">小狗10</div>
+                    <div class="character-desc">忠诚可爱的狗狗</div>
+                </div>
+                <div class="character kk">
+                    <div class="character-icon">⛹‍♂️</div>
+                    <div class="character-name">主人kk</div>
+                    <div class="character-desc">温柔善良的主人</div>
+                </div>
+            </div>
         </header>
         
         <div class="progress-container">
             <div class="progress-header">
-                <div class="progress-title">空间天赋测评</div>
+                <div class="progress-title">恋爱关系测评</div>
                 <div class="progress-count">1/10</div>
             </div>
             <div class="progress-bar">
                 <div class="progress-fill" id="progressFill"></div>
             </div>
-            <div class="progress-description">请根据每个问题选择最符合您实际情况的选项</div>
+            <div class="progress-description">请根据每个问题选择最符合小狗10行为的选项</div>
         </div>
         
         <div class="question-container" id="questionContainer">
             <div class="question-number">问题 1</div>
-            <div class="question-text" id="questionText">我能够轻松地在脑海中想象和旋转三维物体</div>
+            <div class="question-text" id="questionText">当主人kk回家时，小狗10的反应是？</div>
             <div class="options-container" id="optionsContainer">
                 <!-- 选项会通过JavaScript动态生成 -->
             </div>
@@ -408,15 +550,24 @@
         
         <div class="result-container" id="resultContainer">
             <div class="result-icon">
-                <i class="fas fa-chart-bar"></i>
+                <i class="fas fa-heart"></i>
             </div>
-            <div class="result-title">您的空间天赋测试结果</div>
+            <div class="result-title">小狗10对主人kk的爱意测试结果</div>
             <div class="result-score" id="finalScore">0/50</div>
+            
+            <div class="love-meter">
+                <div class="love-fill" id="loveFill">0%</div>
+                <div class="love-label">
+                    <span>一般喜欢</span>
+                    <span>非常深爱</span>
+                </div>
+            </div>
+            
             <div class="result-description" id="resultDescription">
                 <!-- 结果描述会通过JavaScript动态生成 -->
             </div>
             <div class="result-details">
-                <h3>空间天赋分析</h3>
+                <h3>小狗10的爱意表现分析</h3>
                 <ul id="resultDetails">
                     <!-- 结果详情会通过JavaScript动态生成 -->
                 </ul>
@@ -427,76 +578,100 @@
         </div>
         
         <footer>
-            <p>本测试结果仅供参考，空间能力可以通过练习和训练提升</p>
-            <p>© 2023 心理测评工具 | 基于认知心理学设计</p>
+            <p>本测试仅供娱乐，狗狗的爱是无条件的，请好好珍惜与宠物的每一刻！</p>
+            <p>© 2023 恋爱关系测试 | 小狗10 ❤️ 主人kk</p>
         </footer>
     </div>
     
     <div class="loading" id="loading">
         <div class="loading-spinner"></div>
-        <p>正在分析您的测试结果...</p>
+        <p>正在分析小狗10的爱意...</p>
     </div>
 
     <script>
-        // 测试问题数据
+        // 测试问题数据 - 围绕小狗10对主人kk的爱
         const questions = [
             {
-                text: "我能够轻松地在脑海中想象和旋转三维物体",
-                category: "空间想象"
+                text: "当主人kk回家时，小狗10的反应是？",
+                category: "欢迎行为"
             },
             {
-                text: "我擅长看地图和导航，不容易迷路",
-                category: "方向感知"
+                text: "主人kk伤心时，小狗10会怎么做？",
+                category: "情感支持"
             },
             {
-                text: "我能够记住去过的地方的布局和环境细节",
-                category: "空间记忆"
+                text: "小狗10会与主人kk分享自己的玩具吗？",
+                category: "分享行为"
             },
             {
-                text: "我喜欢玩拼图、迷宫或构建类游戏",
-                category: "空间兴趣"
+                text: "当主人kk离开家时，小狗10的表现是？",
+                category: "分离焦虑"
             },
             {
-                text: "我能够通过观察就理解物体的空间关系",
-                category: "空间推理"
+                text: "小狗10愿意让主人kk给它剪指甲或洗澡吗？",
+                category: "信任程度"
             },
             {
-                text: "我擅长在头脑中计算物体之间的距离和大小",
-                category: "空间估算"
+                text: "主人kk叫小狗10时，它的反应速度是？",
+                category: "服从程度"
             },
             {
-                text: "我能够轻松地看懂工程图纸或三维设计图",
-                category: "图纸理解"
+                text: "小狗10会保护主人kk免受陌生人接近吗？",
+                category: "保护行为"
             },
             {
-                text: "我善于从不同角度观察和描述物体",
-                category: "视角转换"
+                text: "小狗10喜欢睡在主人kk的旁边吗？",
+                category: "亲密程度"
             },
             {
-                text: "我能够快速在脑海中构建一个场景的完整画面",
-                category: "场景构建"
+                text: "小狗10会模仿主人kk的行为或习惯吗？",
+                category: "认同程度"
             },
             {
-                text: "我擅长在头脑中模拟物体移动的轨迹",
-                category: "运动模拟"
+                text: "小狗10愿意为主人kk学习新技能吗？",
+                category: "奉献精神"
             }
         ];
         
         // 选项配置
         const options = [
-            { value: 1, label: "非常不符合" },
-            { value: 2, label: "不太符合" },
-            { value: 3, label: "一般符合" },
-            { value: 4, label: "比较符合" },
-            { value: 5, label: "非常符合" }
+            { value: 1, label: "几乎不理会" },
+            { value: 2, label: "偶尔摇尾巴" },
+            { value: 3, label: "正常欢迎" },
+            { value: 4, label: "热情摇尾巴" },
+            { value: 5, label: "极度兴奋，跳起来迎接" }
         ];
         
         // 结果描述
         const resultLevels = [
-            { min: 10, max: 20, title: "基础水平", desc: "您的空间能力处于基础水平，可能不太擅长需要强空间想象的任务，但可以通过训练提升。" },
-            { min: 21, max: 30, title: "中等水平", desc: "您的空间能力处于中等水平，具备基本的空间感知能力，可以在日常活动中应对一般的空间任务。" },
-            { min: 31, max: 40, title: "良好水平", desc: "您的空间能力良好，具有较强的空间想象和方向感知能力，适合从事需要空间思维的工作。" },
-            { min: 41, max: 50, title: "优秀水平", desc: "您的空间能力非常优秀，具有出色的空间想象、记忆和推理能力，在需要强空间思维的领域可能表现出色。" }
+            { 
+                min: 10, 
+                max: 20, 
+                title: "普通喜欢", 
+                desc: "小狗10对主人kk只是普通的喜欢程度，可能还需要更多互动来增进感情哦！",
+                color: "#ff9e6d"
+            },
+            { 
+                min: 21, 
+                max: 30, 
+                title: "比较喜欢", 
+                desc: "小狗10对主人kk有比较深的感情，是很不错的主宠关系！",
+                color: "#ff8fa5"
+            },
+            { 
+                min: 31, 
+                max: 40, 
+                title: "非常深爱", 
+                desc: "小狗10非常深爱主人kk，你们之间有很强的羁绊和信任关系！",
+                color: "#ff6b9d"
+            },
+            { 
+                min: 41, 
+                max: 50, 
+                title: "痴心绝对", 
+                desc: "小狗10对主人kk的爱已经到了痴心绝对的程度！你是它生命中最重要的人！",
+                color: "#ff3d7f"
+            }
         ];
         
         // 当前状态
@@ -518,11 +693,29 @@
         const resultDescription = document.getElementById('resultDescription');
         const resultDetails = document.getElementById('resultDetails');
         const loading = document.getElementById('loading');
+        const loveFill = document.getElementById('loveFill');
+        const loveHearts = document.getElementById('loveHearts');
         
         // 初始化测试
         function initTest() {
+            createHearts();
             renderQuestion();
             updateProgress();
+        }
+        
+        // 创建漂浮爱心
+        function createHearts() {
+            const hearts = ['❤️', '🧡', '💛', '💚', '💙', '💜', '🤎', '🖤', '🤍', '💖', '💗', '💓', '💞', '💕'];
+            for (let i = 0; i < 15; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart-animation';
+                heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
+                heart.style.left = `${Math.random() * 100}%`;
+                heart.style.top = `${Math.random() * 100}%`;
+                heart.style.animationDelay = `${Math.random() * 2}s`;
+                heart.style.fontSize = `${Math.random() * 1 + 1}rem`;
+                loveHearts.appendChild(heart);
+            }
         }
         
         // 渲染当前问题
@@ -557,7 +750,7 @@
             prevBtn.disabled = currentQuestion === 0;
             
             if (currentQuestion === questions.length - 1) {
-                nextBtn.innerHTML = '查看结果 <i class="fas fa-chart-bar"></i>';
+                nextBtn.innerHTML = '查看结果 <i class="fas fa-heart"></i>';
             } else {
                 nextBtn.innerHTML = '下一题 <i class="fas fa-arrow-right"></i>';
             }
@@ -629,6 +822,11 @@
                 // 更新结果
                 finalScore.textContent = `${totalScore}/50`;
                 
+                // 更新爱心进度条
+                const lovePercentage = (totalScore / 50) * 100;
+                loveFill.style.width = `${lovePercentage}%`;
+                loveFill.textContent = `${Math.round(lovePercentage)}%`;
+                
                 // 根据分数确定结果等级
                 let resultLevel = resultLevels[0];
                 for (const level of resultLevels) {
@@ -640,7 +838,7 @@
                 
                 // 更新结果描述
                 resultDescription.innerHTML = `
-                    <h3>${resultLevel.title}</h3>
+                    <h3 style="color: ${resultLevel.color}">${resultLevel.title}</h3>
                     <p>${resultLevel.desc}</p>
                 `;
                 
@@ -665,10 +863,43 @@
                 for (const category in categoryScores) {
                     const avgScore = (categoryScores[category].total / categoryScores[category].count).toFixed(1);
                     const li = document.createElement('li');
-                    li.textContent = `${category}: ${avgScore}/5 分`;
+                    
+                    // 根据平均分添加表情
+                    let emoji = "🐕";
+                    if (avgScore >= 4) emoji = "❤️";
+                    else if (avgScore >= 3) emoji = "💖";
+                    else if (avgScore >= 2) emoji = "💕";
+                    
+                    li.textContent = `${emoji} ${category}: ${avgScore}/5 分`;
                     resultDetails.appendChild(li);
                 }
+                
+                // 添加额外爱心动画
+                addResultHearts(resultLevel.color);
             }, 1500);
+        }
+        
+        // 添加结果爱心动画
+        function addResultHearts(color) {
+            const hearts = ['❤️', '💖', '💗', '💓', '💞'];
+            for (let i = 0; i < 10; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.className = 'heart-animation';
+                    heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
+                    heart.style.left = `${Math.random() * 80 + 10}%`;
+                    heart.style.top = '100%';
+                    heart.style.position = 'fixed';
+                    heart.style.color = color;
+                    heart.style.zIndex = '9999';
+                    document.body.appendChild(heart);
+                    
+                    // 动画结束后移除
+                    setTimeout(() => {
+                        heart.remove();
+                    }, 2000);
+                }, i * 200);
+            }
         }
         
         // 重新开始测试
@@ -680,6 +911,10 @@
             // 显示问题容器，隐藏结果容器
             questionContainer.style.display = 'block';
             resultContainer.style.display = 'none';
+            
+            // 重置爱心进度条
+            loveFill.style.width = '0%';
+            loveFill.textContent = '0%';
             
             // 重新初始化测试
             initTest();
